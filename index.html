@@ -20,31 +20,36 @@
 
   <div class="container has-text-centered">
     <!-- paper title -->
-    <p class="title is-3"> DreamGaussian: Generative Gaussian Splatting for Efficient 3D Content Creation </p>
+    <p class="title is-3"> LoSF-UDF: Learning Unsigned Distance Fields from Local Shape Functions for 3D Surface Reconstruction </p>
     <!-- publication -->
-    <p class="subtitle is-4"> ICLR 2024 (Oral) </p>
+    <p class="subtitle is-4"> -- </p>
     <!-- authors -->
     <p class="title is-5 mt-2"> 
-      <a href="https://me.kiui.moe/" target="_blank">Jiaxiang Tang</a><sup>1</sup>, 
-      <a href="https://jiawei-ren.github.io/" target="_blank">Jiawei Ren</a><sup>2</sup>, 
-      <a href="https://hangz-nju-cuhk.github.io/" target="_blank">Hang Zhou</a><sup>3</sup>, 
-      <a href="https://liuziwei7.github.io/" target="_blank">Ziwei Liu</a><sup>2</sup>,
-      <a href="http://www.cis.pku.edu.cn/info/1177/1378.htm" target="_blank">Gang Zeng</a><sup>1</sup>
+      <a href="https://jbhu67.github.io/" target="_blank">Jiangbei Hu</a><sup>1,2</sup>, 
+      Yanggeng Li<sup>1</sup>, 
+      <a href="" target="_blank">Fei Hou</a><sup>3</sup>, 
+      <a href="" target="_blank">Junhui Hou</a><sup>4</sup>,
+      <a href="" target="_blank">Zhebin Zhang</a><sup>1</sup>
+      <a href="" target="_blank">Shengfa Wang</a><sup>2</sup>
+      <a href="" target="_blank">Na Lei</a><sup>2</sup>
+      <a href="" target="_blank">Ying He</a><sup>1</sup>
     </p>
     <!-- affiliations -->
     <p class="subtitle is-5"> 
-      <sup>1</sup> Peking University &nbsp;
-      <sup>2</sup> S-Lab, Nanyang Technological University &nbsp;
-      <sup>3</sup> Baidu &nbsp;
+      <sup>1</sup> Nanyang Technological University &nbsp;
+      <sup>2</sup> Dalian University of Technology &nbsp;
+      <sup>3</sup> Chinese Academy of Sciences &nbsp;
+      <sup>4</sup> City University of Hong Kong &nbsp;
+      <sup>5</sup> InnoPeak Technology &nbsp;
     </p>
 
     <!-- other links -->
     <div class="is-flex is-justify-content-center">
       <span class="icon-text mx-1">
-        <a class="button is-dark" href="https://arxiv.org/abs/2309.16653" role="button" target="_blank"> <span class="icon"> <ion-icon name="document-outline"></ion-icon> </span> <span> Arxiv </span>  </a> 
+        <a class="button is-dark" href="https://arxiv.org/abs/2407.01330" role="button" target="_blank"> <span class="icon"> <ion-icon name="document-outline"></ion-icon> </span> <span> Arxiv </span>  </a> 
       </span>
       <span class="icon-text mx-1">
-        <a class="button is-dark" href="https://github.com/dreamgaussian/dreamgaussian" role="button" target="_blank"> <span class="icon"> <ion-icon name="logo-github"></ion-icon> </span> <span> Code </span> </a> 
+        <a class="button is-dark" href="https://github.com/jbHu67/Local2UDF" role="button" target="_blank"> <span class="icon"> <ion-icon name="logo-github"></ion-icon> </span> <span> Code </span> </a> 
       </span>
     </div>
    
@@ -56,14 +61,7 @@
     <!-- abstract -->
     <p class="title is-3 mt-5 has-text-centered"> Abstract </p>
     <p class="content is-size-6 has-text-left">
-Recent advances in 3D content creation mostly leverage optimization-based 3D generation via score distillation sampling (SDS).
-Though promising results have been exhibited, these methods often suffer from slow per-sample optimization, limiting their practical usage. 
-In this paper, we propose <b>DreamGaussian</b>, a novel 3D content generation framework that achieves both efficiency and quality simultaneously. 
-Our key insight is to design a generative 3D Gaussian Splatting model with companioned mesh extraction and texture refinement in UV space.
-In contrast to the occupancy pruning used in Neural Radiance Fields, we demonstrate that the progressive densification of 3D Gaussians converges significantly faster for 3D generative tasks.
-To further enhance the texture quality and facilitate downstream applications, we introduce an efficient algorithm to convert 3D Gaussians into textured meshes and apply a fine-tuning stage to refine the details.
-Extensive experiments demonstrate the superior efficiency and competitive generation quality of our proposed approach.
-Notably, DreamGaussian produces high-quality textured meshes in just 2 minutes from a single-view image, achieving approximately 10 times acceleration compared to existing methods. 
+      Unsigned distance fields (UDFs) provide a versatile framework for representing a diverse array of 3D shapes, encompassing both watertight and non-watertight geometries. Traditional UDF learning methods typically require extensive training on large datasets of 3D shapes, which is costly and often necessitates hyperparameter adjustments for new datasets. This paper presents a novel neural framework, <b>LoSF-UDF</b>, for reconstructing surfaces from 3D point clouds by leveraging local shape functions to learn UDFs. We observe that 3D shapes manifest simple patterns within localized areas, prompting us to create a training dataset of point cloud patches characterized by mathematical functions that represent a continuum from smooth surfaces to sharp edges and corners. Our approach learns features within a specific radius around each query point and utilizes an attention mechanism to focus on the crucial features for UDF estimation. This method enables efficient and robust surface reconstruction from point clouds without the need for shape-specific training. Additionally, our method exhibits enhanced resilience to noise and outliers in point clouds compared to existing methods. We present comprehensive experiments and comparisons across various datasets, including synthetic and real-scanned point clouds, to validate our method's efficacy.
     </p>
     
     <!-- results (videos) -->
