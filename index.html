@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bulma css template -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- model viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <title>
+    LoSF-UDF
+  </title>
+  <link rel="icon" href="teapot.ico">
+</head>
+
+<body>
+  <section class="section">
+
+    <div class="container has-text-centered">
+      <!-- paper title -->
+      <p class="title is-3"> A Lightweight UDF Learning Framework for 3D Reconstruction Based on Local Shape Functions
+      </p>
+      <!-- publication -->
+      <!-- <p class="subtitle is-4"> ICLR 2024 (Oral) </p> -->
+      <!-- authors -->
+      <p class="title is-5 mt-2">
+        <a href="https://faculty.dlut.edu.cn/hujiangbei1/en/index.htm" target="_blank">Jinagbei Hu</a><sup>1,2*</sup>,
+        <a href="" target="_blank">Yanggeng Li</a><sup>2*</sup>,
+        <a href="https://lcs.ios.ac.cn/~houf/" target="_blank">Fei Hou</a><sup>3</sup>,
+        <a href="https://sites.google.com/site/junhuihoushomepage/" target="_blank">Junhui Hou</a><sup>4</sup>,
+        <a href="" target="_blank">Zhebin Zhang</a><sup>5</sup>,
+        <a href="" target="_blank">Shengfa Wang</a><sup>1</sup>,
+        </br>
+        <a href="" target="_blank">Na Lei</a><sup>1</sup>,
+        <a href="https://personal.ntu.edu.sg/yhe/" target="_blank">Ying He</a><sup>2&#9993</sup>
+      </p>
+      <!-- affiliations -->
+      <p class="subtitle is-5">
+        <sup>1</sup> Dalian University of Tehcnology &nbsp;
+        <sup>2</sup> Nanyang Technological University &nbsp;
+        <sup>3</sup> Chinese Academy of Sciences &nbsp;
+        <sup>4</sup> City University of Hong Kong &nbsp;
+        </br>
+        <sup>5</sup> InnoPeak Technology &nbsp;
+        <sup>2</sup> S-Lab, Nanyang Technological University &nbsp;
+        </br>
+        <sup>*</sup> Equal contribution
+        <sup>&#9993</sup> Corresponding author
+      </p>
+
+      <!-- other links -->
+      <div class="is-flex is-justify-content-center">
+        <span class="icon-text mx-1">
+          <a class="button is-dark" href="https://arxiv.org/abs/2407.01330" role="button" target="_blank"> <span
+              class="icon"> <ion-icon name="document-outline"></ion-icon> </span> <span> Arxiv </span> </a>
+        </span>
+        <span class="icon-text mx-1">
+          <a class="button is-dark" href="https://github.com/jbHu67/Local2UDF" role="button" target="_blank">
+            <span class="icon"> <ion-icon name="logo-github"></ion-icon> </span> <span> Code </span> </a>
+        </span>
+      </div>
+
+    </div>
+
+    <!-- main container -->
+    <div class="container is-max-desktop has-text-centered">
+
+      <!-- abstract -->
+      <p class="title is-3 mt-5 has-text-centered"> Abstract </p>
+      <p class="content is-size-5" , style="text-align: justify;">
+        Unsigned distance fields (UDFs) provide a versatile framework for representing a diverse array of 3D shapes,
+        encompassing both watertight and non-watertight geometries. Traditional UDF learning methods typically require
+        extensive training on large 3D shape datasets, which is costly and necessitates re-training for new datasets.
+        This paper presents a novel neural framework, <b>LoSF-UDF</b>, for reconstructing surfaces from 3D point clouds
+        by leveraging local shape functions to learn UDFs. We observe that 3D shapes manifest simple patterns in
+        localized regions, prompting us to develop a training dataset of point cloud patches characterized by
+        mathematical functions that represent a continuum from smooth surfaces to sharp edges and corners. Our approach
+        learns features within a specific radius around each query point and utilizes an attention mechanism to focus on
+        the crucial features for UDF estimation. Despite being highly lightweight, with only 653 KB of trainable
+        parameters and a modest-sized training dataset with 0.5 GB storage, our method enables efficient and robust
+        surface reconstruction from point clouds without requiring for shape-specific training. Furthermore, our method
+        exhibits enhanced resilience to noise and outliers in point clouds compared to existing methods. We conduct
+        comprehensive experiments and comparisons across various datasets, including synthetic and real-scanned point
+        clouds, to validate our method's efficacy. Notably, our lightweight framework offers rapid and reliable
+        initialization for other unsupervised iterative approaches, improving both the efficiency and accuracy of their
+        reconstructions.
+      </p>
+
+      <!-- results (videos) -->
+      <p class="title is-3 mt-5 has-text-centered"> Video </p>
+
+      <p class="content has-text-centered is-size-5">
+      </p>
+      <video muted autoplay controls loop>
+        <source src="videos/demo.mp4" type="video/mp4">
+      </video>
+
+
+      <p class="title is-3 mt-5 has-text-centered"> Method </p>
+      <img src="imgs/pipeline.png" alt="Pipeline" class="mt-3">
+
+      <p class="content is-size-5" , style="text-align: justify;">
+        <b>Motivation:</b> Distinct from SDFs, there is no need for UDFs to determine the sign to distinguish between
+        the inside and outside of a shape. Consequently, the UDF values are solely related to the local geometric
+        characteristics of 3D shapes. Furthermore, within a certain radius for a query point, local geometry can be
+        approximated by general mathematical functions. Stemming from these insights, we propose a novel UDF learning
+        framework that focuses on local geometries. We employ local shape functions to construct a series of point cloud
+        patches as our training dataset, which includes common smooth and sharp geometric features. Given a point cloud
+        to reconstruct, we employ the optimized model to output the corresponding distance values based on the local
+        patch within radius for each query point.
+      </p>
+
+      <p class="title is-3 mt-5 has-text-centered"> Network Architecture </p>
+      <img src="imgs/network.png" alt="Network" class="mt-3">
+
+      <p class="title is-3 mt-5 has-text-centered"> Results </p>
+      <p class="title is-4 mt-5 has-text-left"> Diverse shapes </p>
+      <p class="content is-size-5" , style="text-align: justify;">
+        We evaluate our method on various datasets, such as Shapenet, DeepFashion, and commonly used computer graphics
+        models, including watertight and non-watertight surfaces.
+        <!-- 3d model viewer -->
+      <div class="level">
+        <div class="level-item">
+          <model-viewer src="meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/luigi.glb" poster="meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/zelda.glb" poster="meshes/zelda.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/toy.glb" poster="meshes/toy.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+      </div>
+
+      <p class="title is-4 mt-5 has-text-left"> With noise/outliers </p>
+      <p class="content is-size-5" , style="text-align: justify;">
+        Our method exhibits enhanced resilience to noise and outliers in point clouds compared to existing methods
+        <!-- 3d model viewer -->
+      <div class="level">
+        <div class="level-item">
+          <model-viewer src="meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/luigi.glb" poster="meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/zelda.glb" poster="meshes/zelda.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/toy.glb" poster="meshes/toy.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+      </div>
+
+      <p class="title is-4 mt-5 has-text-left"> Real-scanned & large scene </p>
+      <p class="content is-size-5" , style="text-align: justify;">
+        Our method is capable of handling real-scanned and large scene point clouds.
+        <!-- 3d model viewer -->
+      <div class="level">
+        <div class="level-item">
+          <model-viewer src="meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/luigi.glb" poster="meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/zelda.glb" poster="meshes/zelda.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/toy.glb" poster="meshes/toy.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+      </div>
+
+
+      <p class="title is-3 mt-5 has-text-centered"> Efficiency </p>
+      <p class="content is-size-5" , style="text-align: justify;">
+        Our framework is <b>highly lightweight</b> with only 653 KB of trainable parameters and a modest-sized training
+        dataset
+        with 0.5
+        GB storage. We compared the time efficiency in the following table. We measured the average runtime in minutes.
+        "#Params" denotes the
+        number
+        of network parameters, while "Size" refers to the storage space occupied by these parameters.
+      <table border="1" cellpadding="5" cellspacing="0" style="width: 100%; text-align: center;">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>SRB</th>
+            <th>DeepFashion3D</th>
+            <th>ShapeNetCars</th>
+            <th>#Param</th>
+            <th>Size (KB)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CAP-UDF</td>
+            <td>15.87</td>
+            <td>10.5</td>
+            <td>10.6</td>
+            <td>463100</td>
+            <td>1809</td>
+          </tr>
+          <tr>
+            <td>LevelSetUDF</td>
+            <td>15.08</td>
+            <td>13.65</td>
+            <td>14.67</td>
+            <td>463100</td>
+            <td>1809</td>
+          </tr>
+          <tr>
+            <td>DUDF</td>
+            <td>14.28</td>
+            <td>11.12</td>
+            <td>14.58</td>
+            <td>461825</td>
+            <td>1804</td>
+          </tr>
+          <tr>
+            <td>GeoUDF</td>
+            <td>0.08</td>
+            <td>0.07</td>
+            <td>0.07</td>
+            <td>253378</td>
+            <td>990</td>
+          </tr>
+          <tr>
+            <td><strong>Ours</strong></td>
+            <td><strong>0.87</strong></td>
+            <td><strong>0.51</strong></td>
+            <td><strong>0.42</strong></td>
+            <td><strong>167127</strong></td>
+            <td><strong>653</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <p class="title is-3 mt-5 has-text-centered"> Accelerating Unsupervised Methods </p>
+      <p class="content is-size-5" , style="text-align: justify;">
+        Unsupervised methods require time-consuming iterative reconstruction of a single point cloud. In contrast, our
+        LoSF-UDF method is a highly lightweight framework. Once trained on a synthetic, shape-independent local patch
+        dataset, it efficiently reconstructs plausible 3D shapes from diverse point clouds, even in the presence of
+        noise
+        and outliers. Although unsupervised methods are time-consuming, they can reconstruct shapes with richer details
+        due to the combined effects of various loss functions. Therefore, we integrate our method with unsupervised
+        approaches to provide better initialization, thereby accelerating convergence and achieving improved
+        reconstruction results.
+        <!-- 3d model viewer -->
+      <div class="level">
+        <div class="level-item">
+          <model-viewer src="meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/luigi.glb" poster="meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/zelda.glb" poster="meshes/zelda.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/toy.glb" poster="meshes/toy.jpg" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+      </div>
+
+      <!-- citation -->
+      <div class="card mt-4">
+        <header class="card-header">
+          <p class="card-header-title"> Citation </p>
+        </header>
+        <div class="card-content is-size-5 has-text-left">
+          <pre><code>@article{losf-udf-2024,
+            title={Learning Unsigned Distance Fields from Local Shape Functions for 3D Surface Reconstruction},
+            author={Hu, Jiangbei and Li, Yanggeng and Hou, Fei and Hou, Junhui and Zhang, Zhebin and Wang, Shengfa and Lei, Na and He, Ying},
+            journal={arXiv preprint arXiv:2407.01330},
+            year={2024}
+          }
+</code></pre>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+</body>
+
+</html>
