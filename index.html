@@ -125,15 +125,42 @@
         <!-- 3d model viewer -->
       <div class="level">
         <div class="level-item">
-          <model-viewer src="meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/clean_mesh/car.glb" poster="meshes/losf-meshes/clean_mesh/car.png" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
-          <model-viewer src="meshes/luigi.glb" poster="meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/clean_mesh/cloth.glb" poster="meshes/losf-meshes/clean_mesh/cloth.glb" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
-          <model-viewer src="meshes/zelda.glb" poster="meshes/zelda.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/clean_mesh/math_surface.glb" poster="meshes/losf-meshes/clean_mesh/math_surface.glb" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/clean_mesh/bunny.glb" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+      </div>
+
+      <p class="title is-4 mt-5 has-text-left"> With noise/outliers </p>
+      <p class="content is-size-5" , style="text-align: justify;">
+        Our method exhibits enhanced resilience to noise and outliers in point clouds compared to existing methods.
+        <!-- 3d model viewer -->
+      <div class="level">
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/elk/capudf_elk.glb"  alt="CAP-UDF" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>  
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/elk/levelsetudf_elk.glb" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/elk/geoudf_elk.glb" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/elk/dudf_elk.glb" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
@@ -141,28 +168,58 @@
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
       </div>
-
-      <p class="title is-4 mt-5 has-text-left"> With noise/outliers </p>
-      <p class="content is-size-5" , style="text-align: justify;">
-        Our method exhibits enhanced resilience to noise and outliers in point clouds compared to existing methods
-        <!-- 3d model viewer -->
       <div class="level">
         <div class="level-item">
-          <model-viewer src="meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/car/capudf_long_car.glb"  alt="CAP-UDF" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>  
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/car/levelsetudf_long_car.glb" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
-          <model-viewer src="meshes/luigi.glb" poster="meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/car/geoudf_long_car.glb" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
-          <model-viewer src="meshes/zelda.glb" poster="meshes/zelda.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/car/dudf_DCUDF_result.glb" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
           <model-viewer src="meshes/toy.glb" poster="meshes/toy.jpg" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
+      </div>
+      <div class="level">
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/bunny/capudf.glb"  alt="CAP-UDF" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>  
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/bunny/levelsetudf.glb" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/bunny/geoudf.glb" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/bunny/dudf.glb" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/noise_outlier_mesh/bunny/ours.glb" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+      </div>
+
+      <div class="level">
+        <p>CAP-UDF</p>    
+        <p>LevelSetUDF</p>
+        <p>GeoUDF</p>
+        <p>DUDF</p>
+        <p><strong>Ours</strong></p>
+        
       </div>
 
       <p class="title is-4 mt-5 has-text-left"> Real-scanned & large scene </p>
@@ -171,21 +228,29 @@
         <!-- 3d model viewer -->
       <div class="level">
         <div class="level-item">
-          <model-viewer src="meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/real_scan/anchor.glb" poster="meshes/losf-meshes/real_scan/anchor.png" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
-          <model-viewer src="meshes/luigi.glb" poster="meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/real_scan/daratech.glb" poster="meshes/losf-meshes/real_scan/daratech.png" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
-          <model-viewer src="meshes/zelda.glb" poster="meshes/zelda.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/real_scan/dc.glb" poster="meshes/losf-meshes/real_scan/dc.png" style="width: 100%; height: 300px;" auto-rotate
+          shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/real_scan/gargoyle.glb" poster="meshes/losf-meshes/real_scan/gargoyle.png" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/real_scan/lord_quas.glb" poster="meshes/losf-meshes/real_scan/lord_quas.png" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+        <!-- <div class="level-item">
           <model-viewer src="meshes/toy.glb" poster="meshes/toy.jpg" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-        </div>
+        </div> -->
       </div>
 
 
@@ -267,21 +332,26 @@
         <!-- 3d model viewer -->
       <div class="level">
         <div class="level-item">
-          <model-viewer src="meshes/anya.glb" poster="meshes/anya.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/losf_siren/book.glb" poster="meshes/losf-meshes/losf_siren/book.png" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
-          <model-viewer src="meshes/luigi.glb" poster="meshes/luigi.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/losf_siren/gargoyle.glb" poster="meshes/losf-meshes/losf_siren/gargoyle.png" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
-          <model-viewer src="meshes/zelda.glb" poster="meshes/zelda.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/losf_siren/head.glb" poster="meshes/losf-meshes/losf_siren/head.png" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
         <div class="level-item">
-          <model-viewer src="meshes/toy.glb" poster="meshes/toy.jpg" style="width: 100%; height: 300px;" auto-rotate
+          <model-viewer src="meshes/losf-meshes/losf_siren/horse_head.glb" poster="meshes/losf-meshes/losf_siren/horse_head.png" style="width: 100%; height: 300px;" auto-rotate
             shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
+        <div class="level-item">
+          <model-viewer src="meshes/losf-meshes/losf_siren/sheep.glb" poster="meshes/losf-meshes/losf_siren/sheep.png" style="width: 100%; height: 300px;" auto-rotate
+            shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+        </div>
+
       </div>
 
       <!-- citation -->
